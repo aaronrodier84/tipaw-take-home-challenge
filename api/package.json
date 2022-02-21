@@ -1,0 +1,50 @@
+{
+  "name": "tipaw-take-home-task-api",
+  "version": "1.0.0",
+  "description": "TIPAW Test Backend API project",
+  "main": "index.js",
+  "repository": "https://www-ninja-leo@github.com/heyrefinery/refinery-dashboard-api.git",
+  "author": "Aaron Rodier",
+  "license": "MIT",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon -r dotenv/config --exec babel-node src/index.js",
+    "db:create": "sequelize-cli db:create",
+    "db:migrate": "sequelize-cli db:migrate",
+    "db:g:migration": "sequelize-cli migration:generate --name",
+    "db:clear": "sequelize-cli db:migrate:undo",
+    "db:g:seed": "sequelize-cli seed:generate --name",
+    "db:seeds": "sequelize-cli db:seed:all",
+    "start": "npm run build && cross-env NODE_ENV=production node -r dotenv/config dist/index.js",
+    "build": "babel src --out-dir dist --copy-files",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "child_process": "^1.0.2",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-validator": "^6.13.0",
+    "http": "^0.0.1-security",
+    "http-errors": "^1.8.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mysql2": "^2.3.3",
+    "passport": "^0.5.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.12.0-beta.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/node": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "nodemon": "^2.0.15",
+    "sequelize-cli": "^6.3.0"
+  }
+}
